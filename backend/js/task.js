@@ -69,7 +69,63 @@ function kLargestCategories(files, k) {
  * Task 3
  */
 function largestFileSize(files) {
-    return 0;
+    if (!files) {
+        return 0;
+    }
+
+    let currFiles = [...files];
+
+    let allRoot = false;
+
+    // Loops through the files until all of the files are roots
+    while (!allRoot) {
+
+        let leaves = [];
+        let parents = [];
+
+        // Loops through all of the files
+        for (let i = 0; i < currFiles.length; i++) {
+
+            // If the file's parent is a leaf, remove the parent from the leaves array
+            if (leaves.includes(currFiles[i].parent)) {
+                leaves.splice(leaves.indexOf(currFiles[i].parent), 1);
+            }
+
+            // If the file is not a parent, add it to the leaves array
+            if (!parents.includes(currFiles[i].id)) {
+                leaves.push(currFiles[i].id);
+            }
+
+            // Add the file's parent to the parents array
+            parents.push(currFiles[i].parent);
+        }
+
+        // Get the names of the leaf files
+        let leafFiles = files.filter(file => leaves.includes(file.id));
+
+        allRoot = true;
+        let i = 0;
+
+        // Loops through the leaf files and adds the size to the parent
+        while (allRoot === true && i < leafFiles.length) {
+
+            if (leafFiles[i].parent !== -1) {
+                // If the file is not a root, add the size to the parent and remove the file from the current files
+                let currParentIndex = currFiles.findIndex(file => file.id === leafFiles[i].parent);
+                currFiles[currParentIndex].size += leafFiles[i].size;
+                currFiles.splice(currFiles.findIndex(file => file.id === leafFiles[i].id), 1);
+                leafFiles.splice(i, 1);
+                allRoot = false;
+            } else {
+                // If the file is a root, increment the index
+                i++;
+            }
+        }
+    }
+
+    // Returns the largest file size
+    return Math.max(...currFiles.map(file => file.size));
+
 }
 
 
