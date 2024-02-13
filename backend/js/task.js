@@ -3,7 +3,30 @@
  * Task 1
  */
 function leafFiles(files) {
-    return [];
+    leaves = [];
+    parents = [];
+
+    // Loops through all of the files
+    for (let i = 0; i < files.length; i++) {
+
+        // If the file's parent is a leaf, remove the parent from the leaves array
+        if (leaves.includes(files[i].parent)) {
+            leaves.splice(leaves.indexOf(files[i].parent), 1);
+        }
+
+        // If the file is not a parent, add it to the leaves array
+        if (!parents.includes(files[i].id)) {
+            leaves.push(files[i].id);
+        }
+
+        // Add the file's parent to the parents array
+        parents.push(files[i].parent);
+    }
+
+    // Get the names of the leaf files
+    leafNames = files.filter(file => leaves.includes(file.id)).map(file => file.name);
+
+    return leafNames;
 }
 
 /**
