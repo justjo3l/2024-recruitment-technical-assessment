@@ -1,0 +1,50 @@
+.card {
+    box-sizing: border-box;
+    background-color: #fafafa;
+    border-radius: 1rem;
+    height: 12rem;
+    width: 20.5rem;
+    padding: 1.5rem;
+    box-shadow: 0rem 0.4rem 0.4rem 0.1rem lightgray;
+    display: grid;
+    grid-template-rows: 1fr 1fr auto;
+}
+
+.card-title {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.course-name {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.course-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-self: flex-end;
+}
+
+.course-reviews {
+    font-size: 0.6rem;
+    font-weight: 300;
+}
+
+.card-info {
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.card img {
+    padding: 0;
+    margin: 0;
+    height: 1.5rem;
+    width: 1.4rem;
+}
+
+.filled {
+    background-color: #b789e5;
+}

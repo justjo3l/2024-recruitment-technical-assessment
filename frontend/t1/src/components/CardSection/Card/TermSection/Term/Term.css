@@ -1,0 +1,9 @@
+.term {
+    box-sizing: border-box;
+    background-color: #ccebf6;
+    width: max-content;
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
