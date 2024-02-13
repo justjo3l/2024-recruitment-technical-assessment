@@ -1,0 +1,44 @@
+#navbar-main {
+    background-color: #f9fafb;
+    box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    padding: 0 0 1rem 0.5rem;
+}
+
+#navbar li > img {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 1rem;
+}
+
+#navbar li {
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+#navbar main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bars-arrow-icon {
+    rotate: 90deg;
+}
+
+header img {
+    width: 2rem;
+    height: 2rem;
+    padding: 1rem;
+}
+
+hr {
+    width: 70%;
+    margin: 0 auto;
+    opacity: 50%;
+}

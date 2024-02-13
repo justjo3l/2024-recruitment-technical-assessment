@@ -1,0 +1,73 @@
+#app {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  gap: 6rem;
+}
+
+#title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#pre-title {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+#main-title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #1479f2;
+}
+
+#main-title:hover {
+  cursor: pointer;
+}
+
+#sub-title {
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+#search-section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#search-bar {
+  height: 2rem;
+  border: solid 3px #c1cbf1;
+  font-weight: 600;
+  padding: 0 1rem;
+  background-image: url('./assets/magnifying-glass.svg');
+  background-size: 1.3rem;
+  background-position: 0.5rem center;
+  background-repeat: no-repeat;
+  text-indent: 1.8rem;
+}
+
+#search-bar:hover {
+  cursor: pointer;
+}
+
+::placeholder {
+  color: #c1cbf1;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: #c1cbf1;
+}
+
+#search-filter {
+  height: 2rem;
+  width: 10rem;
+  border-radius: 0.3rem;
+  text-indent: 0.5rem;
+}
