@@ -24,6 +24,10 @@
   color: #1479f2;
 }
 
+#main-title:hover {
+  cursor: pointer;
+}
+
 #sub-title {
   font-size: 0.9rem;
   font-weight: 900;

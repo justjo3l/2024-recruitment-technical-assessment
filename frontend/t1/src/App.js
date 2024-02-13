@@ -1,19 +1,31 @@
 import './App.css';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NavBar from './components/NavBar/NavBar.js';
 import Main from './components/Main/Main.js';
 
 import CardSection from './components/CardSection/CardSection.js';
 
 function App() {
+
+  const [titleClicked, setTitleClicked] = React.useState(false);
+
+  useEffect(() => {
+    if (titleClicked) {
+      document.getElementById("main-title").style.color = "red";
+    } else {
+      document.getElementById("main-title").style.color = "#1479f2";
+    }
+  
+  })
+
   return (
     <div className="App">
       <NavBar />
       <Main>
         <section id="title-section">
           <h6 id="pre-title">DevSoc presents</h6>
-          <h1 id="main-title">unilectives</h1>
+          <h1 id="main-title" onClick={() => setTitleClicked(!titleClicked)}>unilectives</h1>
           <h5 id="sub-title">Your one-stop shop for UNSW course and elective reviews.</h5>
         </section>
         <section id="search-section">
