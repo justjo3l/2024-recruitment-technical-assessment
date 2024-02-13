@@ -1,2 +1,5 @@
 Please detail the instructions to view your solution here:
 
+This is a simple React app :)
+Type 'npm start' when you are in the 't1' folder to start the app!
+You should automatically be navigated to http://localhost:3000/ where the app will be!
