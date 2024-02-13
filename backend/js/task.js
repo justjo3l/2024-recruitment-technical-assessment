@@ -3,8 +3,8 @@
  * Task 1
  */
 function leafFiles(files) {
-    leaves = [];
-    parents = [];
+    let leaves = [];
+    let parents = [];
 
     // Loops through all of the files
     for (let i = 0; i < files.length; i++) {
@@ -24,20 +24,49 @@ function leafFiles(files) {
     }
 
     // Get the names of the leaf files
-    leafNames = files.filter(file => leaves.includes(file.id)).map(file => file.name);
+    let leafNames = files.filter(file => leaves.includes(file.id)).map(file => file.name);
 
     return leafNames;
 }
 
 /**
- * Task 1
+ * Task 2
  */
 function kLargestCategories(files, k) {
-    return [];
+    let categoryMap = {};
+
+    // Loops through each of the files
+    for (let i = 0; i < files.length; i++) {
+
+        // Loops through each of the file's categories
+        for (let j = 0; j < files[i].categories.length; j++) {
+
+            if (categoryMap[files[i].categories[j]]) {
+                // If the category is already in the map, increment the count
+                categoryMap[files[i].categories[j]] += 1
+            } else {
+                // If the category is not in the map, add it to the map with a count of 1
+                categoryMap[files[i].categories[j]] = 1
+            }
+        }
+    }
+
+    let categories = [];
+
+    // Loops through the category map and adds the categories to the categories array
+    for (let category in categoryMap) {
+        categories.push([category, categoryMap[category]]);
+    }
+
+    // Sorts the categories array by count and then by name
+    categories.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+
+    // Returns the first k categories
+    return categories.slice(0, k).map(category => category[0]);
 }
 
 /**
- * Task 1
+ * Task 3
  */
 function largestFileSize(files) {
     return 0;
