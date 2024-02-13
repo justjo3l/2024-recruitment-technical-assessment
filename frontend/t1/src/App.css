@@ -1,4 +1,4 @@
-.App {
+#app {
   height: 100%;
   width: 100%;
   display: grid;
@@ -50,6 +50,10 @@
   background-position: 0.5rem center;
   background-repeat: no-repeat;
   text-indent: 1.8rem;
+}
+
+#search-bar:hover {
+  cursor: pointer;
 }
 
 ::placeholder {
